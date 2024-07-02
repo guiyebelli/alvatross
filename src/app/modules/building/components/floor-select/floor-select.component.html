@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-select [(value)]="floorSelect" (selectionChange)="onChangeOption($event.value)">
+    @for (f of floors; track f.name) {
+      <mat-option [value]="f">{{ f.name }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>

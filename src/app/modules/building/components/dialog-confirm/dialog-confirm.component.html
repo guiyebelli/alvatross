@@ -1,0 +1,15 @@
+<div class="mat-dialog p-3" *ngIf="data">
+  <mat-dialog-content class="mat-typography">
+    <div class="row">
+      <div class="col-12">
+        <p>{{ data.message }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="d-flex justify-content-around">
+      <button class="px-3 outline" mat-button [mat-dialog-close]="false">Cancelar</button>
+      <button class="px-3" mat-button [mat-dialog-close]="true">Confirmar</button>
+    </div>
+  </mat-dialog-actions>
+</div>

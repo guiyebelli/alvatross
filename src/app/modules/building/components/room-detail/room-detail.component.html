@@ -1,0 +1,22 @@
+<div class="card">
+  <p>{{ room.name }}</p>
+  <div class="row">
+    <div class="col-12">
+      <label> Capacidad máxima </label>
+      <mat-form-field>
+        <input #capacity type="text" matInput [value]="room.capacity" placeholder="Ingrese una capacidad" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-12">
+    <label> Ocupación </label>
+    <mat-form-field>
+      <input #occupation type="text" matInput [value]="room.occupation" placeholder="Ingrese la ocupación" />
+      <span matSuffix class="pe-2">%</span>
+    </mat-form-field>
+  </div>
+  <div class="col-12 d-flex justify-content-between">
+    <button class="px-3 danger" mat-button (click)="deleteRoom()">Eliminar</button>
+    <button class="px-3" mat-button (click)="editRoom(capacity.value, occupation.value)">Modificar</button>
+  </div>
+</div>

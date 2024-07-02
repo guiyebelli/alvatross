@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="row">
+    <div class="col-12 pb-3">
+      <div class="d-flex justify-content-between align-items-center">
+        <span>{{ floor.name }}</span>
+        <button class="px-3" mat-button (click)="addFloor()">Añadir sala</button>
+      </div>
+    </div>
+    @for (r of roomsFilter; track r.name) {
+      <div class="col-12 col-md-6 col-lg-3 pb-3">
+        <app-room-detail [room]="r" (delete)="deleteRoom($event)"></app-room-detail>
+      </div>
+    }
+    @if (!roomsFilter.length) {
+      <div class="col-12 d-flex justify-content-center">
+        <p>No existen resultados para los filtros aplicados</p>
+      </div>
+    }
+  </div>
+</div>

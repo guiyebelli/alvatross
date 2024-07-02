@@ -1,0 +1,32 @@
+<ng-container *ngIf="floors$ | async as floors; else showLoading">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-12">
+        <p class="title">Salas</p>
+
+        @if (floors.length){
+
+        <app-floor-select [floors]="floors" (changeOption)="changeFloor($event)"></app-floor-select>
+        <app-room-filter
+          (capacityValueChange)="changeCapacityValue($event)"
+          (occupationValueChange)="changeOccupationValue($event)"
+        ></app-room-filter>
+
+        <hr />
+        <br />
+
+        <app-floor-detail
+          [floor]="floorSelect"
+          [capacityFilter]="capacityValueFilter"
+          [occupationFilter]="occupationValueFilter"
+        ></app-floor-detail>
+        } @else {
+        <p>No hay salas disponibles para mostrar.</p>
+        }
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #showLoading>
+  <app-block-spinner></app-block-spinner>
+</ng-template>

@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'variables';
+body,
+html,
+div {
+  font-family: $font;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+.card {
+  border: solid 0.1em $primary;
+  border-radius: 26px;
+  padding: 15px;
+}
+.mat-mdc-button {
+  color: $white !important;
+  background-color: $primary !important;
+  border-radius: 12px !important;
+  &.danger {
+    background-color: $red !important;
+  }
+  &.outline {
+    background-color: transparent !important;
+    color: $primary !important;
+  }
+}
+mat-form-field {
+  .mdc-text-field {
+    border: solid 0.1em $primary;
+    background-color: $white !important;
+  }
+  .mat-mdc-text-field-wrapper {
+    border-radius: 12px;
+  }
+  .mdc-line-ripple {
+    display: none;
+  }
+}
+.mat-mdc-snack-bar-container.SUCCESS .mdc-snackbar__surface {
+  color: $white;
+  background: $green;
+}
+.mat-mdc-snack-bar-container.ERROR .mdc-snackbar__surface {
+  color: $white;
+  background: $red;
+}
